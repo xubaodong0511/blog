@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>清风工具箱</title>
+    <link href="/2025/01/06/%E6%B8%85%E9%A3%8E%E5%B7%A5%E5%85%B7%E7%AE%B1/"/>
+    <url>/2025/01/06/%E6%B8%85%E9%A3%8E%E5%B7%A5%E5%85%B7%E7%AE%B1/</url>
+    
+    <content type="html"><![CDATA[<h2 id="工具箱一键脚本"><a href="#工具箱一键脚本" class="headerlink" title="工具箱一键脚本"></a>工具箱一键脚本</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">bash &lt;(curl -sSL https:<span class="hljs-regexp">//gi</span>tee.com<span class="hljs-regexp">/xbd666/</span>qingfeng<span class="hljs-regexp">/raw/m</span>aster/toolbox.sh)<br></code></pre></td></tr></table></figure><h2 id="脚本一键安装MySQL-mariadb-并更改密码"><a href="#脚本一键安装MySQL-mariadb-并更改密码" class="headerlink" title="脚本一键安装MySQL&#x2F;mariadb,并更改密码"></a>脚本一键安装MySQL&#x2F;mariadb,并更改密码</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">bash &lt;(curl -sSL https:<span class="hljs-regexp">//gi</span>tee.com<span class="hljs-regexp">/xbd666/</span>qingfeng<span class="hljs-regexp">/raw/m</span>aster/MySQL_install.sh)<br></code></pre></td></tr></table></figure><h2 id="添加swap分区–调用gitee仓库"><a href="#添加swap分区–调用gitee仓库" class="headerlink" title="添加swap分区–调用gitee仓库"></a>添加swap分区–调用gitee仓库</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">bash &lt;(curl -sSL https:<span class="hljs-regexp">//gi</span>tee.com<span class="hljs-regexp">/xbd666/</span>qingfeng<span class="hljs-regexp">/raw/m</span>aster/swap.sh)<br></code></pre></td></tr></table></figure><h2 id="安装前-后端软件包一键脚本"><a href="#安装前-后端软件包一键脚本" class="headerlink" title="安装前&#x2F;后端软件包一键脚本"></a>安装前&#x2F;后端软件包一键脚本</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">bash &lt;(curl -sSL https:<span class="hljs-regexp">//gi</span>tee.com<span class="hljs-regexp">/xbd666/</span>qingfeng<span class="hljs-regexp">/raw/m</span>aster/Software_package.sh)<br></code></pre></td></tr></table></figure><h2 id="gitee仓库超连接"><a href="#gitee仓库超连接" class="headerlink" title="gitee仓库超连接"></a>gitee仓库超连接</h2><p><a href="https://gitee.com/xbd666/qingfeng">gitee</a><br><a href="https://github.com/KKISO574/shell">github</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>study，工具箱</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2025/01/06/hello-world/"/>
     <url>/2025/01/06/hello-world/</url>
