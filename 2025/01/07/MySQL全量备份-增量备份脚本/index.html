@@ -19,22 +19,22 @@
   <meta name="author" content="Mr.xu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="docker博客创建编辑配置文件1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859vim &#x2F;halo&#x2F;docker-compose.yamlversion: &quot;3&quot;services:  halo    image">
+    <meta name="description" content="#!&#x2F;bin&#x2F;bash mysql物理备份脚本每周日进行全量备份，周一到周六进行增量备份，7天为一个周期备份路径、日志路径123456backup_dir&#x3D;&quot;&#x2F;backup&quot;log_dir&#x3D;&quot;&#x2F;backup&#x2F;log&quot;full_backup_dir&#x3D;&quot;&#x2F;backup&#x2F;full&quot;inc_backup_dir&#x3D;&quot;&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker部署halo博客">
-<meta property="og:url" content="http://example.com/2025/01/06/docker%E9%83%A8%E7%BD%B2halo%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="MySQL全量备份&#x2F;增量备份脚本">
+<meta property="og:url" content="http://example.com/2025/01/07/MySQL%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD-%E5%A2%9E%E9%87%8F%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="docker博客创建编辑配置文件1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859vim &#x2F;halo&#x2F;docker-compose.yamlversion: &quot;3&quot;services:  halo    image">
+<meta property="og:description" content="#!&#x2F;bin&#x2F;bash mysql物理备份脚本每周日进行全量备份，周一到周六进行增量备份，7天为一个周期备份路径、日志路径123456backup_dir&#x3D;&quot;&#x2F;backup&quot;log_dir&#x3D;&quot;&#x2F;backup&#x2F;log&quot;full_backup_dir&#x3D;&quot;&#x2F;backup&#x2F;full&quot;inc_backup_dir&#x3D;&quot;&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-01-06T14:28:57.000Z">
-<meta property="article:modified_time" content="2025-01-06T14:46:43.554Z">
+<meta property="article:published_time" content="2025-01-07T12:49:48.000Z">
+<meta property="article:modified_time" content="2025-01-07T12:50:43.721Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="study，博客">
+<meta property="article:tag" content="study，MySQL">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>docker部署halo博客 - Hexo</title>
+  <title>MySQL全量备份/增量备份脚本 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="docker部署halo博客"></span>
+            <span id="subtitle" data-typed-text="MySQL全量备份/增量备份脚本"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-06 22:28" pubdate>
-          2025年1月6日 晚上
+        <time datetime="2025-01-07 20:49" pubdate>
+          2025年1月7日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          354 字
+          430 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -271,31 +271,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">docker部署halo博客</h1>
+            <h1 id="seo-header">MySQL全量备份/增量备份脚本</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="docker博客创建"><a href="#docker博客创建" class="headerlink" title="docker博客创建"></a>docker博客创建</h1><h2 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /halo/docker-compose.yaml<br>version: <span class="hljs-string">&quot;3&quot;</span><br><br>services:<br>  halo<br>    image: halohub/halo:2.11<br>    container_name: halo<br>    restart: on-failure:3<br>    depends_on:<br>      halodb:<br>        condition: service_healthy<br>    networks:<br>      halo_network:<br>    volumes:<br><br>   - ./halo2:/root/.halo2<br>     rts:<br>        - <span class="hljs-string">&quot;8090:8090&quot;</span><br>          althcheck:<br>                <span class="hljs-built_in">test</span>: [<span class="hljs-string">&quot;CMD&quot;</span>, <span class="hljs-string">&quot;curl&quot;</span>, <span class="hljs-string">&quot;-f&quot;</span>, <span class="hljs-string">&quot;http://localhost:8090/actuator/health/readiness&quot;</span>]<br>                interval: 30s<br>                <span class="hljs-built_in">timeout</span>: 5s<br>                retries: 5<br>                start_period: 30s          <br>              <span class="hljs-built_in">command</span>:<br>             - --spring.r2dbc.url=r2dbc:pool:postgresql://halodb/halo<br>               --spring.r2dbc.username=halo<br><br>      <span class="hljs-comment"># PostgreSQL 的密码，请保证与下方 POSTGRES_PASSWORD 的变量值一致。</span><br><br>   - --spring.r2dbc.password=openpostgresql<br>     --spring.sql.init.platform=postgresql<br><br>      <span class="hljs-comment"># 外部访问地址，请根据实际需要修改</span><br><br>   - --halo.external-url=http://localhost:8090/<br>     halodb:<br>         image: postgres:15.4<br>         container_name: halodb<br>         restart: on-failure:3<br>         networks:<br>           halo_network:<br>         volumes:<br>        - ./db:/var/lib/postgresql/data<br>          rts:<br>             - <span class="hljs-string">&quot;5432:5432&quot;</span><br>               althcheck:<br>                     <span class="hljs-built_in">test</span>: [ <span class="hljs-string">&quot;CMD&quot;</span>, <span class="hljs-string">&quot;pg_isready&quot;</span> ]<br>                     interval: 10s<br>                     <span class="hljs-built_in">timeout</span>: 5s<br>                     retries: 5<br>                   environment:<br>                  - POSTGRES_PASSWORD=openpostgresql<br>                    POSTGRES_USER=halo<br>                       - POSTGRES_DB=halo<br>                         PGUSER=halo<br><br>networks:<br>  halo_network:<br></code></pre></td></tr></table></figure>
-
-<h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> -pv /halo<br></code></pre></td></tr></table></figure>
-
-<h2 id="重新指定文件目录"><a href="#重新指定文件目录" class="headerlink" title="重新指定文件目录"></a>重新指定文件目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mv</span> docker-compose.yaml /halo<br><span class="hljs-built_in">cd</span> /halo<br></code></pre></td></tr></table></figure>
-
-<h2 id="运行以下命令卸载所有冲突的包"><a href="#运行以下命令卸载所有冲突的包" class="headerlink" title="运行以下命令卸载所有冲突的包"></a>运行以下命令卸载所有冲突的包</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-keyword">for</span> pkg <span class="hljs-keyword">in</span> docker.io docker-doc docker-compose podman-docker containerd runc; <span class="hljs-keyword">do</span> sudo apt-<span class="hljs-built_in">get</span> <span class="hljs-built_in">remove</span> <span class="hljs-variable">$pkg</span>; done<br></code></pre></td></tr></table></figure>
-
-<h2 id="设置-Docker-的apt存储库"><a href="#设置-Docker-的apt存储库" class="headerlink" title="设置 Docker 的apt存储库"></a>设置 Docker 的apt存储库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Add Docker&#x27;s official GPG key:</span><br><span class="hljs-built_in">sudo</span> apt-get update<br><span class="hljs-built_in">sudo</span> apt-get install ca-certificates curl gnupg<br><span class="hljs-built_in">sudo</span> install -m 0755 -d /etc/apt/keyrings<br>curl -fsSL https://download.docker.com/linux/debian/gpg | <span class="hljs-built_in">sudo</span> gpg --dearmor -o /etc/apt/keyrings/docker.gpg<br><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">chmod</span> a+r /etc/apt/keyrings/docker.gpg<br><br><span class="hljs-comment"># Add the repository to Apt sources:</span><br><span class="hljs-built_in">echo</span> \<br>  <span class="hljs-string">&quot;deb [arch=<span class="hljs-subst">$(dpkg --print-architecture)</span> signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \</span><br><span class="hljs-string">  <span class="hljs-subst">$(. /etc/os-release &amp;&amp; echo <span class="hljs-string">&quot;<span class="hljs-variable">$VERSION_CODENAME</span>&quot;</span>)</span> stable&quot;</span> | \<br>  <span class="hljs-built_in">sudo</span> <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/docker.list &gt; /dev/null<br><span class="hljs-built_in">sudo</span> apt-get update<br></code></pre></td></tr></table></figure>
-
-<h2 id="运行安装脚本"><a href="#运行安装脚本" class="headerlink" title="运行安装脚本"></a>运行安装脚本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">bash &lt;(curl -sSL https://linuxmirrors.cn/docker.sh)    //脚本运行<br>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin    //新版docker版本脚本<br></code></pre></td></tr></table></figure>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">apt-get install -y docker-compose<br></code></pre></td></tr></table></figure>
-
-<h2 id="验证版本号"><a href="#验证版本号" class="headerlink" title="验证版本号"></a>验证版本号</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ada">docker-compose <span class="hljs-comment">--version</span><br>docker <span class="hljs-comment">--version</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="安装运行"><a href="#安装运行" class="headerlink" title="安装运行"></a>安装运行</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shel">docker-compose up -d<br>systemctl status docker<br></code></pre></td></tr></table></figure>
-
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p><code>输入IP地址+端口8090</code>进入注册页面</p>
-
+                <p>#!&#x2F;bin&#x2F;bash</p>
+<h1 id="mysql物理备份脚本"><a href="#mysql物理备份脚本" class="headerlink" title="mysql物理备份脚本"></a>mysql物理备份脚本</h1><h1 id="每周日进行全量备份，周一到周六进行增量备份，7天为一个周期"><a href="#每周日进行全量备份，周一到周六进行增量备份，7天为一个周期" class="headerlink" title="每周日进行全量备份，周一到周六进行增量备份，7天为一个周期"></a>每周日进行全量备份，周一到周六进行增量备份，7天为一个周期</h1><h1 id="备份路径、日志路径"><a href="#备份路径、日志路径" class="headerlink" title="备份路径、日志路径"></a>备份路径、日志路径</h1><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">backup_dir</span>=<span class="hljs-string">&quot;/backup&quot;</span><br><span class="hljs-attr">log_dir</span>=<span class="hljs-string">&quot;/backup/log&quot;</span><br><span class="hljs-attr">full_backup_dir</span>=<span class="hljs-string">&quot;/backup/full&quot;</span><br><span class="hljs-attr">inc_backup_dir</span>=<span class="hljs-string">&quot;/backup/inc&quot;</span><br><br><span class="hljs-attr">log_date</span>=$(date <span class="hljs-string">&quot;+%F-%T&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="数据库用户、密码"><a href="#数据库用户、密码" class="headerlink" title="数据库用户、密码"></a>数据库用户、密码</h1><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">MY_USER</span>=root<br><span class="hljs-attr">MY_PASS</span>=P@ssword1<br></code></pre></td></tr></table></figure>
+<h1 id="判断日志、备份路径是否存在"><a href="#判断日志、备份路径是否存在" class="headerlink" title="判断日志、备份路径是否存在"></a>判断日志、备份路径是否存在</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[ -d <span class="hljs-variable">$backup_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$backup_dir</span><br>[ -d <span class="hljs-variable">$log_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$log_dir</span><br>[ -d <span class="hljs-variable">$full_backup_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$full_backup_dir</span><br>[ -d <span class="hljs-variable">$inc_backup_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$inc_backup_dir</span><br></code></pre></td></tr></table></figure>
+<h1 id="全量备份函数"><a href="#全量备份函数" class="headerlink" title="全量备份函数"></a>全量备份函数</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-function"><span class="hljs-title">full_backup</span></span>()&#123;<br>	<span class="hljs-comment"># 全量备份命令 </span><br>	innobackupex --user=<span class="hljs-variable">$MY_USER</span> --password=<span class="hljs-variable">$MY_PASS</span> <span class="hljs-variable">$full_backup_dir</span><br>	<span class="hljs-keyword">if</span> [ $? -eq 0 ];<span class="hljs-keyword">then</span><br>		<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> full backup!!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/back.log<br>	<span class="hljs-keyword">else</span><br>		<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> full failed!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/err.log<br>	<span class="hljs-keyword">fi</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="获取上周日的时间-以-Y-m-d格式显示"><a href="#获取上周日的时间-以-Y-m-d格式显示" class="headerlink" title="获取上周日的时间,以%Y-%m-%d格式显示"></a>获取上周日的时间,以%Y-%m-%d格式显示</h1><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mel">sunday=$(<span class="hljs-keyword">date</span> -d <span class="hljs-string">&quot;last sunday&quot;</span> +%F)<br></code></pre></td></tr></table></figure>
+<h1 id="获取前一天的时间-以-Y-m-d格式显示"><a href="#获取前一天的时间-以-Y-m-d格式显示" class="headerlink" title="获取前一天的时间,以%Y-%m-%d格式显示"></a>获取前一天的时间,以%Y-%m-%d格式显示</h1><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mel">yesterday=$(<span class="hljs-keyword">date</span> -d <span class="hljs-string">&quot;yesterday&quot;</span> +%F)<br></code></pre></td></tr></table></figure>
+<h1 id="增量备份函数"><a href="#增量备份函数" class="headerlink" title="增量备份函数"></a>增量备份函数</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-function"><span class="hljs-title">inc_backup</span></span>()&#123;<br>	<span class="hljs-comment"># 判断当前时间是否为周一(周一需要去找全量备份，周二到周六找前一天的备份)</span><br>	<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$week_date</span> -eq 1 ];<span class="hljs-keyword">then</span><br>		<span class="hljs-comment"># 查找全量备份的文件路径</span><br>		<span class="hljs-built_in">local</span> full_backup_dir=$(find <span class="hljs-variable">$backup_dir</span> -name <span class="hljs-variable">$&#123;sunday&#125;</span>*)<br>		innobackupex --user=<span class="hljs-variable">$MY_USER</span> --password=<span class="hljs-variable">$MY_PASS</span> --incremental <span class="hljs-variable">$&#123;inc_backup_dir&#125;</span> --incremental-basedir=<span class="hljs-variable">$&#123;full_backup_dir&#125;</span><br>		<span class="hljs-comment"># 判断命令是否执行成功,写入日志文件</span><br>    	<span class="hljs-keyword">if</span> [ $? -eq 0 ];<span class="hljs-keyword">then</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc backup!!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/back.log<br>    	<span class="hljs-keyword">else</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc failed!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/err.log<br>    	<span class="hljs-keyword">fi</span><br>	<span class="hljs-keyword">else</span><br>		<span class="hljs-comment"># 查找前一天的文件路径</span><br>        <span class="hljs-built_in">local</span> yesterday_backup_dir=$(find <span class="hljs-variable">$backup_dir</span> -name <span class="hljs-variable">$&#123;yesterday&#125;</span>*)<br>        innobackupex --user=<span class="hljs-variable">$MY_USER</span> --password=<span class="hljs-variable">$MY_PASS</span> --incremental <span class="hljs-variable">$&#123;inc_backup_dir&#125;</span> --incremental-basedir=<span class="hljs-variable">$&#123;yesterday_backup_dir&#125;</span><br>		<span class="hljs-comment"># 判断命令是否执行成功,写入日志文件</span><br>    	<span class="hljs-keyword">if</span> [ $? -eq 0 ];<span class="hljs-keyword">then</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc backup!!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/back.log<br>    	<span class="hljs-keyword">else</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc failed!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/err.log<br>    	<span class="hljs-keyword">fi</span><br>	<span class="hljs-keyword">fi</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="查看当前是周几"><a href="#查看当前是周几" class="headerlink" title="查看当前是周几"></a>查看当前是周几</h1><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mel">week_date=$(<span class="hljs-keyword">date</span> +%u)<br></code></pre></td></tr></table></figure>
+<h1 id="判断当前是周几，周日则执行全量备份，周一到周六执行增量备份"><a href="#判断当前是周几，周日则执行全量备份，周一到周六执行增量备份" class="headerlink" title="判断当前是周几，周日则执行全量备份，周一到周六执行增量备份"></a>判断当前是周几，周日则执行全量备份，周一到周六执行增量备份</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$week_date</span> -eq 7 ];<span class="hljs-keyword">then</span><br>	full_backup<br><span class="hljs-keyword">else</span><br>	inc_backup	<br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -307,7 +297,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/study%EF%BC%8C%E5%8D%9A%E5%AE%A2/" class="print-no-link">#study，博客</a>
+        <a href="/tags/study%EF%BC%8CMySQL/" class="print-no-link">#study，MySQL</a>
       
     </div>
   
@@ -319,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>docker部署halo博客</div>
-      <div>http://example.com/2025/01/06/docker部署halo博客/</div>
+      <div>MySQL全量备份/增量备份脚本</div>
+      <div>http://example.com/2025/01/07/MySQL全量备份-增量备份脚本/</div>
     </div>
     <div class="license-meta">
       
@@ -332,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月6日</div>
+          <div>2025年1月7日</div>
         </div>
       
       
@@ -364,18 +354,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/07/MySQL%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD-%E5%A2%9E%E9%87%8F%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/" title="MySQL全量备份/增量备份脚本">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL全量备份/增量备份脚本</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/06/%E6%B8%85%E9%A3%8E%E5%B7%A5%E5%85%B7%E7%AE%B1/" title="清风工具箱">
-                        <span class="hidden-mobile">清风工具箱</span>
+                      <a href="/2025/01/06/docker%E9%83%A8%E7%BD%B2halo%E5%8D%9A%E5%AE%A2/" title="docker部署halo博客">
+                        <span class="hidden-mobile">docker部署halo博客</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
