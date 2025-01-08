@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>linux网卡配置</title>
+    <link href="/2025/01/08/linux%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/"/>
+    <url>/2025/01/08/linux%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<p><strong>永久设置网卡</strong></p><blockquote><p><code>另外也可以在终端上输入nmtui，进入网卡设置界面</code></p></blockquote><p><strong>1、Centos 7 配置</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">Centos 7<br><span class="hljs-meta prompt_"># </span><span class="language-bash">vim/etc/sysconfig/network-scripts/ifcfg-ens33 //网卡配置文件的路径</span><br>TYPE=Ethernet//网卡类型<br>BOOTPROTO=dhcp //网卡模式<br>     --&gt;  dhcp //自动获取<br>     --&gt;  static //手动获取<br>     --&gt;  none //手动获取<br>NAME=ens33 //网卡名称（可以修改的）<br>DEVICE=ens33 //设备名称<br>ONBOOT=yes //网卡开关<br>IPADDR=192.168.10.104//IP地址<br>PREFIX=24//子网掩码<br>NETMASK=255.255.255.0 //子网掩码<br>GATEWAY=192.168.10.2 //网关<br>DNS1=192.168.10.2 //DNS<br></code></pre></td></tr></table></figure><p><strong>重启</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl restart network //重启网卡生效配置<br></code></pre></td></tr></table></figure><p><strong>2、Centos 9 配置</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">Centos9<br><span class="hljs-meta prompt_"># </span><span class="language-bash">vim /etc/NetworkManager/system-connections/ens33.nmconnection  //修改如下选项即可</span><br>address=192.168.10.120/24,192.168.26.2  //ip地址，子网掩码，网关<br>dns=192.168.10.2       //DNS<br>method=manual <br><span class="hljs-meta prompt_">   --&gt; </span><span class="language-bash">manual          //手动</span><br><span class="hljs-meta prompt_">   --&gt; </span><span class="language-bash">auto            //自动</span><br></code></pre></td></tr></table></figure><p><strong>重启</strong></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmcli c reload      //重启网络服务 <br>nmcli c down ens33  //开启网络 <br>nmcli c up ens33    //关闭网络<br></code></pre></td></tr></table></figure><p><strong>3、当network和networkmanager 网卡冲突</strong></p><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gauss">systemctl <span class="hljs-keyword">stop</span> NetworkManager <br><br>systemctl disabled NetworkManager   <span class="hljs-comment">//将NetworkManger停止</span><br><br>ifup ens33          <span class="hljs-comment">//输入此命令即可查看ens33网卡</span><br><br>systemctl restart network          <span class="hljs-comment">//重启网卡服务</span><br><br><span class="hljs-meta"># 此时应该就可以看到ens33的IP地址了</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+      <tag>network</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MySQL全量备份/增量备份脚本</title>
     <link href="/2025/01/07/MySQL%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD-%E5%A2%9E%E9%87%8F%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/"/>
     <url>/2025/01/07/MySQL%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD-%E5%A2%9E%E9%87%8F%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/</url>

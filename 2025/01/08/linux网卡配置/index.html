@@ -19,22 +19,23 @@
   <meta name="author" content="Mr.xu">
   <meta name="keywords" content="">
   
-    <meta name="description" content="#!&#x2F;bin&#x2F;bash mysql物理备份脚本每周日进行全量备份，周一到周六进行增量备份，7天为一个周期备份路径、日志路径123456backup_dir&#x3D;&quot;&#x2F;backup&quot;log_dir&#x3D;&quot;&#x2F;backup&#x2F;log&quot;full_backup_dir&#x3D;&quot;&#x2F;backup&#x2F;full&quot;inc_backup_dir&#x3D;&quot;&#x2F;">
+    <meta name="description" content="永久设置网卡  另外也可以在终端上输入nmtui，进入网卡设置界面  1、Centos 7 配置 123456789101112131415Centos 7# vim	&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33 		&#x2F;&#x2F;网卡配置文件的路径TYPE&#x3D;Ethernet			&#x2F;&#x2F;网卡类型BOOTPROTO&#x3D;dhcp 			&#x2F;&#x2F;网卡模式     --&gt;  d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL全量备份&#x2F;增量备份脚本">
-<meta property="og:url" content="http://example.com/2025/01/07/MySQL%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD-%E5%A2%9E%E9%87%8F%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/index.html">
+<meta property="og:title" content="linux网卡配置">
+<meta property="og:url" content="http://example.com/2025/01/08/linux%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#!&#x2F;bin&#x2F;bash mysql物理备份脚本每周日进行全量备份，周一到周六进行增量备份，7天为一个周期备份路径、日志路径123456backup_dir&#x3D;&quot;&#x2F;backup&quot;log_dir&#x3D;&quot;&#x2F;backup&#x2F;log&quot;full_backup_dir&#x3D;&quot;&#x2F;backup&#x2F;full&quot;inc_backup_dir&#x3D;&quot;&#x2F;">
+<meta property="og:description" content="永久设置网卡  另外也可以在终端上输入nmtui，进入网卡设置界面  1、Centos 7 配置 123456789101112131415Centos 7# vim	&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33 		&#x2F;&#x2F;网卡配置文件的路径TYPE&#x3D;Ethernet			&#x2F;&#x2F;网卡类型BOOTPROTO&#x3D;dhcp 			&#x2F;&#x2F;网卡模式     --&gt;  d">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-01-07T12:49:48.000Z">
-<meta property="article:modified_time" content="2025-01-07T12:50:43.721Z">
+<meta property="article:published_time" content="2025-01-08T11:45:48.000Z">
+<meta property="article:modified_time" content="2025-01-08T12:04:42.989Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="study，MySQL">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="network">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>MySQL全量备份/增量备份脚本 - Hexo</title>
+  <title>linux网卡配置 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="MySQL全量备份/增量备份脚本"></span>
+            <span id="subtitle" data-typed-text="linux网卡配置"></span>
           
         </div>
 
@@ -211,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-01-07 20:49" pubdate>
-          2025年1月7日 晚上
+        <time datetime="2025-01-08 19:45" pubdate>
+          2025年1月8日 晚上
         </time>
       </span>
     
@@ -223,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          430 字
+          260 字
         
       </span>
     
@@ -234,7 +235,7 @@
         
         
         
-          4 分钟
+          3 分钟
         
       </span>
     
@@ -271,21 +272,29 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">MySQL全量备份/增量备份脚本</h1>
+            <h1 id="seo-header">linux网卡配置</h1>
             
             
               <div class="markdown-body">
                 
-                <p>#!&#x2F;bin&#x2F;bash</p>
-<h1 id="mysql物理备份脚本"><a href="#mysql物理备份脚本" class="headerlink" title="mysql物理备份脚本"></a>mysql物理备份脚本</h1><h1 id="每周日进行全量备份，周一到周六进行增量备份，7天为一个周期"><a href="#每周日进行全量备份，周一到周六进行增量备份，7天为一个周期" class="headerlink" title="每周日进行全量备份，周一到周六进行增量备份，7天为一个周期"></a>每周日进行全量备份，周一到周六进行增量备份，7天为一个周期</h1><h1 id="备份路径、日志路径"><a href="#备份路径、日志路径" class="headerlink" title="备份路径、日志路径"></a>备份路径、日志路径</h1><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">backup_dir</span>=<span class="hljs-string">&quot;/backup&quot;</span><br><span class="hljs-attr">log_dir</span>=<span class="hljs-string">&quot;/backup/log&quot;</span><br><span class="hljs-attr">full_backup_dir</span>=<span class="hljs-string">&quot;/backup/full&quot;</span><br><span class="hljs-attr">inc_backup_dir</span>=<span class="hljs-string">&quot;/backup/inc&quot;</span><br><br><span class="hljs-attr">log_date</span>=$(date <span class="hljs-string">&quot;+%F-%T&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h1 id="数据库用户、密码"><a href="#数据库用户、密码" class="headerlink" title="数据库用户、密码"></a>数据库用户、密码</h1><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">MY_USER</span>=root<br><span class="hljs-attr">MY_PASS</span>=P@ssword1<br></code></pre></td></tr></table></figure>
-<h1 id="判断日志、备份路径是否存在"><a href="#判断日志、备份路径是否存在" class="headerlink" title="判断日志、备份路径是否存在"></a>判断日志、备份路径是否存在</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">[ -d <span class="hljs-variable">$backup_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$backup_dir</span><br>[ -d <span class="hljs-variable">$log_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$log_dir</span><br>[ -d <span class="hljs-variable">$full_backup_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$full_backup_dir</span><br>[ -d <span class="hljs-variable">$inc_backup_dir</span> ] || <span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$inc_backup_dir</span><br></code></pre></td></tr></table></figure>
-<h1 id="全量备份函数"><a href="#全量备份函数" class="headerlink" title="全量备份函数"></a>全量备份函数</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-function"><span class="hljs-title">full_backup</span></span>()&#123;<br>	<span class="hljs-comment"># 全量备份命令 </span><br>	innobackupex --user=<span class="hljs-variable">$MY_USER</span> --password=<span class="hljs-variable">$MY_PASS</span> <span class="hljs-variable">$full_backup_dir</span><br>	<span class="hljs-keyword">if</span> [ $? -eq 0 ];<span class="hljs-keyword">then</span><br>		<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> full backup!!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/back.log<br>	<span class="hljs-keyword">else</span><br>		<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> full failed!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/err.log<br>	<span class="hljs-keyword">fi</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="获取上周日的时间-以-Y-m-d格式显示"><a href="#获取上周日的时间-以-Y-m-d格式显示" class="headerlink" title="获取上周日的时间,以%Y-%m-%d格式显示"></a>获取上周日的时间,以%Y-%m-%d格式显示</h1><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mel">sunday=$(<span class="hljs-keyword">date</span> -d <span class="hljs-string">&quot;last sunday&quot;</span> +%F)<br></code></pre></td></tr></table></figure>
-<h1 id="获取前一天的时间-以-Y-m-d格式显示"><a href="#获取前一天的时间-以-Y-m-d格式显示" class="headerlink" title="获取前一天的时间,以%Y-%m-%d格式显示"></a>获取前一天的时间,以%Y-%m-%d格式显示</h1><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mel">yesterday=$(<span class="hljs-keyword">date</span> -d <span class="hljs-string">&quot;yesterday&quot;</span> +%F)<br></code></pre></td></tr></table></figure>
-<h1 id="增量备份函数"><a href="#增量备份函数" class="headerlink" title="增量备份函数"></a>增量备份函数</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-function"><span class="hljs-title">inc_backup</span></span>()&#123;<br>	<span class="hljs-comment"># 判断当前时间是否为周一(周一需要去找全量备份，周二到周六找前一天的备份)</span><br>	<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$week_date</span> -eq 1 ];<span class="hljs-keyword">then</span><br>		<span class="hljs-comment"># 查找全量备份的文件路径</span><br>		<span class="hljs-built_in">local</span> full_backup_dir=$(find <span class="hljs-variable">$backup_dir</span> -name <span class="hljs-variable">$&#123;sunday&#125;</span>*)<br>		innobackupex --user=<span class="hljs-variable">$MY_USER</span> --password=<span class="hljs-variable">$MY_PASS</span> --incremental <span class="hljs-variable">$&#123;inc_backup_dir&#125;</span> --incremental-basedir=<span class="hljs-variable">$&#123;full_backup_dir&#125;</span><br>		<span class="hljs-comment"># 判断命令是否执行成功,写入日志文件</span><br>    	<span class="hljs-keyword">if</span> [ $? -eq 0 ];<span class="hljs-keyword">then</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc backup!!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/back.log<br>    	<span class="hljs-keyword">else</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc failed!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/err.log<br>    	<span class="hljs-keyword">fi</span><br>	<span class="hljs-keyword">else</span><br>		<span class="hljs-comment"># 查找前一天的文件路径</span><br>        <span class="hljs-built_in">local</span> yesterday_backup_dir=$(find <span class="hljs-variable">$backup_dir</span> -name <span class="hljs-variable">$&#123;yesterday&#125;</span>*)<br>        innobackupex --user=<span class="hljs-variable">$MY_USER</span> --password=<span class="hljs-variable">$MY_PASS</span> --incremental <span class="hljs-variable">$&#123;inc_backup_dir&#125;</span> --incremental-basedir=<span class="hljs-variable">$&#123;yesterday_backup_dir&#125;</span><br>		<span class="hljs-comment"># 判断命令是否执行成功,写入日志文件</span><br>    	<span class="hljs-keyword">if</span> [ $? -eq 0 ];<span class="hljs-keyword">then</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc backup!!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/back.log<br>    	<span class="hljs-keyword">else</span><br>        	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;log_date&#125;</span> inc failed!!&quot;</span> &gt;&gt; <span class="hljs-variable">$log_dir</span>/err.log<br>    	<span class="hljs-keyword">fi</span><br>	<span class="hljs-keyword">fi</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="查看当前是周几"><a href="#查看当前是周几" class="headerlink" title="查看当前是周几"></a>查看当前是周几</h1><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mel">week_date=$(<span class="hljs-keyword">date</span> +%u)<br></code></pre></td></tr></table></figure>
-<h1 id="判断当前是周几，周日则执行全量备份，周一到周六执行增量备份"><a href="#判断当前是周几，周日则执行全量备份，周一到周六执行增量备份" class="headerlink" title="判断当前是周几，周日则执行全量备份，周一到周六执行增量备份"></a>判断当前是周几，周日则执行全量备份，周一到周六执行增量备份</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> [ <span class="hljs-variable">$week_date</span> -eq 7 ];<span class="hljs-keyword">then</span><br>	full_backup<br><span class="hljs-keyword">else</span><br>	inc_backup	<br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
+                <p><strong>永久设置网卡</strong></p>
+<blockquote>
+<p><code>另外也可以在终端上输入nmtui，进入网卡设置界面</code></p>
+</blockquote>
+<p><strong>1、Centos 7 配置</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">Centos 7<br><span class="hljs-meta prompt_"># </span><span class="language-bash">vim	/etc/sysconfig/network-scripts/ifcfg-ens33 		//网卡配置文件的路径</span><br>TYPE=Ethernet			//网卡类型<br>BOOTPROTO=dhcp 			//网卡模式<br>     --&gt;  dhcp 			//自动获取<br>     --&gt;  static 		//手动获取<br>     --&gt;  none 			//手动获取<br>NAME=ens33 				//网卡名称（可以修改的）<br>DEVICE=ens33 			//设备名称<br>ONBOOT=yes 				//网卡开关<br>IPADDR=192.168.10.104	//IP地址<br>PREFIX=24				//子网掩码<br>NETMASK=255.255.255.0 	//子网掩码<br>GATEWAY=192.168.10.2 	//网关<br>DNS1=192.168.10.2 		//DNS<br></code></pre></td></tr></table></figure>
+<p><strong>重启</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">systemctl restart network 		//重启网卡生效配置<br></code></pre></td></tr></table></figure>
+
+<p><strong>2、Centos 9 配置</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">Centos9<br><span class="hljs-meta prompt_"># </span><span class="language-bash">vim /etc/NetworkManager/system-connections/ens33.nmconnection  //修改如下选项即可</span><br>address=192.168.10.120/24,192.168.26.2 	 //ip地址，子网掩码，网关<br>dns=192.168.10.2       //DNS<br>method=manual 						<br><span class="hljs-meta prompt_">   --&gt; </span><span class="language-bash">manual          //手动</span><br><span class="hljs-meta prompt_">   --&gt; </span><span class="language-bash">auto            //自动</span><br></code></pre></td></tr></table></figure>
+<p><strong>重启</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">nmcli c reload      //重启网络服务 <br>nmcli c down ens33  //开启网络 <br>nmcli c up ens33    //关闭网络<br></code></pre></td></tr></table></figure>
+
+<p><strong>3、当network和networkmanager 网卡冲突</strong></p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gauss">systemctl <span class="hljs-keyword">stop</span> NetworkManager <br><br>systemctl disabled NetworkManager   <span class="hljs-comment">//将NetworkManger停止</span><br><br>ifup ens33          <span class="hljs-comment">//输入此命令即可查看ens33网卡</span><br><br>systemctl restart network          <span class="hljs-comment">//重启网卡服务</span><br><br><span class="hljs-meta"># 此时应该就可以看到ens33的IP地址了</span><br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
@@ -297,7 +306,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/study%EF%BC%8CMySQL/" class="print-no-link">#study，MySQL</a>
+        <a href="/tags/linux/" class="print-no-link">#linux</a>
+      
+        <a href="/tags/network/" class="print-no-link">#network</a>
       
     </div>
   
@@ -309,8 +320,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>MySQL全量备份/增量备份脚本</div>
-      <div>http://example.com/2025/01/07/MySQL全量备份-增量备份脚本/</div>
+      <div>linux网卡配置</div>
+      <div>http://example.com/2025/01/08/linux网卡配置/</div>
     </div>
     <div class="license-meta">
       
@@ -322,7 +333,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年1月7日</div>
+          <div>2025年1月8日</div>
         </div>
       
       
@@ -354,18 +365,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/08/linux%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/" title="linux网卡配置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">linux网卡配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/06/docker%E9%83%A8%E7%BD%B2halo%E5%8D%9A%E5%AE%A2/" title="docker部署halo博客">
-                        <span class="hidden-mobile">docker部署halo博客</span>
+                      <a href="/2025/01/07/MySQL%E5%85%A8%E9%87%8F%E5%A4%87%E4%BB%BD-%E5%A2%9E%E9%87%8F%E5%A4%87%E4%BB%BD%E8%84%9A%E6%9C%AC/" title="MySQL全量备份/增量备份脚本">
+                        <span class="hidden-mobile">MySQL全量备份/增量备份脚本</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
